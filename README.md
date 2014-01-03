@@ -126,6 +126,6 @@ browserify -t literalify ./app.js > bundle.js
 
 Creates a browserify transform that will replace the given require calls with the given JavaScript expressions.
 
-# License
+# Unlicense
 
-The code is released into the Public Domain according to the terms of [CC0](http://creativecommons.org/publicdomain/zero/1.0/).
+This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying [UNLICENSE](https://github.com/pluma/literalify/blob/master/UNLICENSE) file.
