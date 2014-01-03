@@ -1,0 +1,36 @@
+{
+  "name": "literalify",
+  "author": "Alan Plum <me@pluma.io>",
+  "version": "0.1.0",
+  "license": "CC0",
+  "description": "A browserify transform for replacing require calls with arbitrary code.",
+  "keywords": [
+    "browserify",
+    "transform",
+    "modules",
+    "browser",
+    "globals",
+    "commonjs",
+    "require"
+  ],
+  "main": "./index.js",
+  "dependencies": {
+    "browserify-transform-tools": "*"
+  },
+  "devDependencies": {
+    "mocha": "~1.16",
+    "expect.js": "~0.2",
+    "uglify-js": "~2.4",
+    "jshint": "~2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pluma/literalify.git"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
+}
