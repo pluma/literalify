@@ -1,7 +1,7 @@
 {
   "name": "literalify",
   "author": "Alan Plum <me@pluma.io>",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "licenses": {
     "type": "UNLICENSE",
     "url": "https://github.com/pluma/literalify/blob/master/UNLICENSE"
