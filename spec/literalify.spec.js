@@ -19,4 +19,18 @@ describe('literalify', function() {
     tr.write('var dep = require(\'some-dependency\');');
     tr.end();
   });
+  it('replaces matching require calls', function(done) {
+    var tr = literalify.configure({'some-dependency': '25'})('foo.js');
+    var str = 'var dep = require(\'other-dependency\');';
+    var data = '';
+    tr.on('data', function(chunk) {
+      data += chunk;
+    });
+    tr.on('end', function() {
+      expect(data).to.equal(str);
+      done();
+    });
+    tr.write(str);
+    tr.end();
+  });
 });
