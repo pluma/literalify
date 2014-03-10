@@ -1,7 +1,7 @@
 {
   "name": "literalify",
   "author": "Alan Plum <me@pluma.io>",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "licenses": {
     "type": "UNLICENSE",
     "url": "https://github.com/pluma/literalify/blob/master/UNLICENSE"
@@ -18,20 +18,22 @@
   ],
   "main": "./index.js",
   "dependencies": {
-    "browserify-transform-tools": "~1.1"
+    "browserify-transform-tools": "~1.2"
   },
   "devDependencies": {
-    "mocha": "~1.16",
-    "expect.js": "~0.2",
-    "uglify-js": "~2.4",
-    "jshint": "~2.4"
+    "mocha": "~1.17",
+    "expect.js": "~0.3",
+    "jshint": "~2.4",
+    "istanbul": "~0.2",
+    "coveralls": "~2.8"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/pluma/literalify.git"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make test",
+    "coveralls": "make coveralls"
   },
   "engines": {
     "node": ">=0.6"
