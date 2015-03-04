@@ -41,6 +41,6 @@
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls ; rm -rf ./coverage"
   },
   "engines": {
-    "node": ">=0.6"
+    "node": ">=0.10"
   }
 }
