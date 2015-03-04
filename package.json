@@ -33,8 +33,10 @@
     "url": "https://github.com/pluma/literalify.git"
   },
   "scripts": {
-    "test": "make test",
-    "coveralls": "make coveralls"
+    "lint": "jshint index.js test",
+    "test": "mocha --growl -R spec",
+    "cover": "istanbul cover --report lcov _mocha -- -R spec",
+    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls ; rm -rf ./coverage"
   },
   "engines": {
     "node": ">=0.6"
