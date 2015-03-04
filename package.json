@@ -1,7 +1,7 @@
 {
   "name": "literalify",
   "author": "Alan Plum <me@pluma.io>",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
   "description": "A browserify transform for replacing require calls with arbitrary code.",
   "keywords": [
