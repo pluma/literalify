@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="literalify : replacing require calls with arbitrary code" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>literalify</title>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>literalify by pluma</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/pluma/literalify">View on GitHub</a>
-
-          <h1 id="project_title">literalify</h1>
-          <h2 id="project_tagline">replacing require calls with arbitrary code</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/pluma/literalify/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/pluma/literalify/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+        <header>
+          <h1>literalify</h1>
+          <h2>literally replacing require calls with arbitrary code</h2>
         </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="synopsis" class="anchor" href="#synopsis"><span class="octicon octicon-link"></span></a>Synopsis</h1>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/pluma/literalify/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/pluma/literalify/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/pluma/literalify" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Synopsis</h1>
 
 <p><strong>literalify</strong> is a <a href="https://github.com/substack/node-browserify">browserify</a> transform for replacing require calls with arbitrary code, e.g. to pretend browser globals are actually CommonJS modules.</p>
 
 <p>This library uses <a href="https://github.com/benbria/browserify-transform-tools">browserify-transform-tools</a>, so you can also supply the configuration by adding a <code>literalify</code> field to your project's <code>package.json</code> file.</p>
 
-<p><a href="http://nodejs.org/api/documentation.html#documentation_stability_index"><img src="http://b.repl.ca/v1/stability-3_--_stable-yellowgreen.png" alt="stability 3 - stable"></a> <a href="http://unlicense.org/"><img src="http://b.repl.ca/v1/license-Unlicense-lightgrey.png" alt="license - Unlicense"></a> <a href="https://flattr.com/submit/auto?user_id=pluma&amp;url=https://github.com/pluma/literalify"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
-
-<p><a href="https://travis-ci.org/pluma/literalify"><img src="https://travis-ci.org/pluma/literalify.png?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/pluma/literalify?branch=master"><img src="https://coveralls.io/repos/pluma/literalify/badge.png?branch=master" alt="Coverage Status"></a> <a href="https://david-dm.org/pluma/literalify"><img src="https://david-dm.org/pluma/literalify.png?theme=shields.io" alt="Dependencies"></a></p>
+<p><a href="http://pluma.mit-license.org"><img src="https://img.shields.io/npm/l/literalify.svg" alt="license - MIT"></a> <a href="https://david-dm.org/pluma/literalify"><img src="https://img.shields.io/david/pluma/literalify.svg" alt="Dependencies"></a></p>
 
 <p><a href="https://npmjs.org/package/literalify"><img src="https://nodei.co/npm/literalify.png?compact=true" alt="NPM status"></a></p>
 
+<p><a href="https://travis-ci.org/pluma/literalify"><img src="https://img.shields.io/travis/pluma/literalify.svg" alt="Build Status"></a> <a href="https://coveralls.io/r/pluma/literalify?branch=master"><img src="https://img.shields.io/coveralls/pluma/literalify.svg" alt="Coverage Status"></a></p>
+
 <h1>
-<a name="rationale" class="anchor" href="#rationale"><span class="octicon octicon-link"></span></a>Rationale</h1>
+<a id="rationale" class="anchor" href="#rationale" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rationale</h1>
 
 <p>If you only want to convert globals-polluting libraries into CommonJS modules, <a href="https://github.com/pluma/moduleify">moduleify</a> would be sufficient. But in some cases you still want these libraries to be loaded via script-tags or have to use an existing non-browserified bundle.</p>
 
@@ -54,141 +54,129 @@
 <p>With <code>literalify</code> you don't have to choose: you can use <code>require</code> to load your legacy libraries <em>without</em> having to pollute your filesystem with those pesky shims.</p>
 
 <h1>
-<a name="use-case-angularjs" class="anchor" href="#use-case-angularjs"><span class="octicon octicon-link"></span></a>Use Case: AngularJS</h1>
+<a id="use-case-angularjs" class="anchor" href="#use-case-angularjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use Case: AngularJS</h1>
 
 <p>In the 1.2 release AngularJS has begun to move some core features into separate files. If you want to use AngularJS with browserify <code>require</code> calls that means you now have the option of either bundling AngularJS with all the extensions you want to use before browserify is applied or to wrap each extension in a separate module and make sure to load all of them explicitly in your start script. In either case you need to run the AngularJS files through browserify in order to be able to <code>require</code> them.</p>
 
 <p>With <code>literalify</code> you can keep the AngularJS files out of browserify and let it simply replace all calls of <code>require("angular")</code> with references to <code>window.angular</code> without having to make manual changes to your code or AngularJS.</p>
 
 <h1>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h1>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h1>
 
 <h2>
-<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h2>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js</h2>
 
 <h3>
-<a name="with-npm" class="anchor" href="#with-npm"><span class="octicon octicon-link"></span></a>With NPM</h3>
+<a id="with-npm" class="anchor" href="#with-npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>With NPM</h3>
 
-<div class="highlight highlight-sh"><pre>npm install literalify
-</pre></div>
+<div class="highlight highlight-sh"><pre>npm install literalify</pre></div>
 
 <h3>
-<a name="from-source" class="anchor" href="#from-source"><span class="octicon octicon-link"></span></a>From source</h3>
+<a id="from-source" class="anchor" href="#from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>From source</h3>
 
 <div class="highlight highlight-sh"><pre>git clone https://github.com/pluma/literalify.git
-<span class="nb">cd </span>literalify
+<span class="pl-s3">cd</span> literalify
 npm install
-make <span class="nb">test</span>
-</pre></div>
+make <span class="pl-s3">test</span></pre></div>
 
 <h1>
-<a name="basic-usage-example" class="anchor" href="#basic-usage-example"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
+<a id="basic-usage-example" class="anchor" href="#basic-usage-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
 
 <h2>
-<a name="examplevendorsome-dependencyjs" class="anchor" href="#examplevendorsome-dependencyjs"><span class="octicon octicon-link"></span></a>example/vendor/some-dependency.js</h2>
+<a id="examplevendorsome-dependencyjs" class="anchor" href="#examplevendorsome-dependencyjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>example/vendor/some-dependency.js</h2>
 
-<div class="highlight highlight-javascript"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">$</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">makeAwesome</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</pre></div>
-
-<h2>
-<a name="exampleappjs" class="anchor" href="#exampleappjs"><span class="octicon octicon-link"></span></a>example/app.js</h2>
-
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">makeAwesome</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'some-dependency'</span><span class="p">).</span><span class="nx">makeAwesome</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">makeAwesome</span><span class="p">(</span><span class="s1">'needs more caps'</span><span class="p">));</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre><span class="pl-s3">window</span>.$ <span class="pl-k">=</span> {
+  <span class="pl-en">makeAwesome</span>: <span class="pl-st">function</span>(<span class="pl-vpf">str</span>) {
+    <span class="pl-k">return</span> str.<span class="pl-s3">toUpperCase</span>();
+  }
+};</pre></div>
 
 <h2>
-<a name="exampleindexhtml" class="anchor" href="#exampleindexhtml"><span class="octicon octicon-link"></span></a>example/index.html</h2>
+<a id="exampleappjs" class="anchor" href="#exampleappjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>example/app.js</h2>
 
-<div class="highlight highlight-html"><pre><span class="cp">&lt;!doctype html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;title&gt;</span>Look at the console!<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"vendor/some-dependency.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> makeAwesome <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>some-dependency<span class="pl-pds">'</span></span>).makeAwesome;
+<span class="pl-en">console</span><span class="pl-s3">.log</span>(makeAwesome(<span class="pl-s1"><span class="pl-pds">'</span>needs more caps<span class="pl-pds">'</span></span>));</pre></div>
 
 <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="exampleindexhtml" class="anchor" href="#exampleindexhtml" aria-hidden="true"><span class="octicon octicon-link"></span></a>example/index.html</h2>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">browserify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browserify'</span><span class="p">),</span>
-    <span class="nx">literalify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'literalify'</span><span class="p">),</span>
-    <span class="nx">b</span> <span class="o">=</span> <span class="nx">browserify</span><span class="p">();</span>
+<div class="highlight highlight-html"><pre>&lt;!doctype html&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+&lt;<span class="pl-ent">head</span>&gt;
+&lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s1"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">title</span>&gt;Look at the console!&lt;/<span class="pl-ent">title</span>&gt;
+&lt;/<span class="pl-ent">head</span>&gt;
+&lt;<span class="pl-ent">body</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>vendor/some-dependency.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>bundle.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
 
-<span class="nx">b</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">literalify</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span>
-    <span class="s1">'some-dependency'</span><span class="o">:</span> <span class="s1">'window.$'</span>
-<span class="p">}));</span>
-<span class="nx">b</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'./app.js'</span><span class="p">);</span>
-<span class="nx">b</span><span class="p">.</span><span class="nx">bundle</span><span class="p">().</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">).</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s1">'bundle.js'</span><span class="p">));</span>
-</pre></div>
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> browserify <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>browserify<span class="pl-pds">'</span></span>),
+    literalify <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>literalify<span class="pl-pds">'</span></span>),
+    b <span class="pl-k">=</span> browserify();
+
+b.transform(literalify.configure({
+    <span class="pl-s1"><span class="pl-pds">'</span>some-dependency<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>window.$<span class="pl-pds">'</span></span>
+}));
+b.<span class="pl-s3">add</span>(<span class="pl-s1"><span class="pl-pds">'</span>./app.js<span class="pl-pds">'</span></span>);
+b.bundle().pipe(<span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>).createWriteStream(<span class="pl-s1"><span class="pl-pds">'</span>bundle.js<span class="pl-pds">'</span></span>));</pre></div>
 
 <h1>
-<a name="usage-example-with-packagejson" class="anchor" href="#usage-example-with-packagejson"><span class="octicon octicon-link"></span></a>Usage example with package.json</h1>
+<a id="usage-example-with-packagejson" class="anchor" href="#usage-example-with-packagejson" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage example with package.json</h1>
 
 <h2>
-<a name="packagejson" class="anchor" href="#packagejson"><span class="octicon octicon-link"></span></a>package.json</h2>
+<a id="packagejson" class="anchor" href="#packagejson" aria-hidden="true"><span class="octicon octicon-link"></span></a>package.json</h2>
 
-<div class="highlight highlight-json"><pre><span class="p">{</span>
-    <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"my-awesome-project"</span><span class="p">,</span>
-    <span class="nt">"devDependencies"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">"browserify"</span><span class="p">:</span> <span class="s2">"*"</span><span class="p">,</span>
-        <span class="nt">"literalify"</span><span class="p">:</span> <span class="s2">"*"</span>
-    <span class="p">},</span>
-    <span class="nt">"literalify"</span><span class="p">:</span> <span class="p">{</span><span class="nt">"some-dependency"</span><span class="p">:</span> <span class="s2">"window.$"</span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-json"><pre>{
+    <span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>my-awesome-project<span class="pl-pds">"</span></span>,
+    <span class="pl-s1"><span class="pl-pds">"</span>devDependencies<span class="pl-pds">"</span></span>: {
+        <span class="pl-s1"><span class="pl-pds">"</span>browserify<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>,
+        <span class="pl-s1"><span class="pl-pds">"</span>literalify<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>*<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-s1"><span class="pl-pds">"</span>literalify<span class="pl-pds">"</span></span>: {<span class="pl-s1"><span class="pl-pds">"</span>some-dependency<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>window.$<span class="pl-pds">"</span></span>}
+}</pre></div>
 
 <h3>
-<a name="usage-api" class="anchor" href="#usage-api"><span class="octicon octicon-link"></span></a>Usage (API)</h3>
+<a id="usage-api" class="anchor" href="#usage-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage (API)</h3>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">browserify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browserify'</span><span class="p">),</span>
-    <span class="nx">literalify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'literalify'</span><span class="p">),</span>
-    <span class="nx">b</span> <span class="o">=</span> <span class="nx">browserify</span><span class="p">();</span>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> browserify <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>browserify<span class="pl-pds">'</span></span>),
+    literalify <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>literalify<span class="pl-pds">'</span></span>),
+    b <span class="pl-k">=</span> browserify();
 
-<span class="nx">b</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">literalify</span><span class="p">);</span>
-<span class="nx">b</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'./app.js'</span><span class="p">);</span>
-<span class="nx">b</span><span class="p">.</span><span class="nx">bundle</span><span class="p">().</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">).</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="s1">'bundle.js'</span><span class="p">));</span>
-</pre></div>
+b.transform(literalify);
+b.<span class="pl-s3">add</span>(<span class="pl-s1"><span class="pl-pds">'</span>./app.js<span class="pl-pds">'</span></span>);
+b.bundle().pipe(<span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>).createWriteStream(<span class="pl-s1"><span class="pl-pds">'</span>bundle.js<span class="pl-pds">'</span></span>));</pre></div>
 
 <h3>
-<a name="usage-shell" class="anchor" href="#usage-shell"><span class="octicon octicon-link"></span></a>Usage (Shell)</h3>
+<a id="usage-shell" class="anchor" href="#usage-shell" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage (Shell)</h3>
 
-<div class="highlight highlight-sh"><pre>browserify -t literalify ./app.js &gt; bundle.js
-</pre></div>
+<div class="highlight highlight-sh"><pre>browserify -t literalify ./app.js <span class="pl-k">&gt;</span> bundle.js</pre></div>
 
 <h1>
-<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h1>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h1>
 
 <h2>
-<a name="literalifyconfigurerulestransform" class="anchor" href="#literalifyconfigurerulestransform"><span class="octicon octicon-link"></span></a>literalify.configure(rules):transform</h2>
+<a id="literalifyconfigurerulestransform" class="anchor" href="#literalifyconfigurerulestransform" aria-hidden="true"><span class="octicon octicon-link"></span></a>literalify.configure(rules):transform</h2>
 
 <p>Creates a browserify transform that will replace the given require calls with the given JavaScript expressions.</p>
 
 <h1>
-<a name="unlicense" class="anchor" href="#unlicense"><span class="octicon octicon-link"></span></a>Unlicense</h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
-<p>This is free and unencumbered public domain software. For more information, see <a href="http://unlicense.org/">http://unlicense.org/</a> or the accompanying <a href="https://github.com/pluma/literalify/blob/master/UNLICENSE">UNLICENSE</a> file.</p>
-      </section>
+<p>The MIT/Expat license. For more information, see <a href="http://pluma.mit-license.org/">http://pluma.mit-license.org/</a> or the accompanying <a href="https://github.com/pluma/counting/blob/master/LICENSE">LICENSE</a> file.</p>
+        </section>
+
+        <footer>
+          literalify is maintained by <a href="https://github.com/pluma">pluma</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">literalify maintained by <a href="https://github.com/pluma">pluma</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
   </body>
 </html>
