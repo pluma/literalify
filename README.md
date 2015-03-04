@@ -4,11 +4,11 @@
 
 This library uses [browserify-transform-tools](https://github.com/benbria/browserify-transform-tools), so you can also supply the configuration by adding a `literalify` field to your project's `package.json` file.
 
-[![stability 3 - stable](http://b.repl.ca/v1/stability-3_--_stable-yellowgreen.png)](http://nodejs.org/api/documentation.html#documentation_stability_index) [![license - MIT](https://img.shields.io/npm/l/literalify.svg)] [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/literalify)
-
-[![Build Status](https://travis-ci.org/pluma/literalify.png?branch=master)](https://travis-ci.org/pluma/literalify) [![Coverage Status](https://coveralls.io/repos/pluma/literalify/badge.png?branch=master)](https://coveralls.io/r/pluma/literalify?branch=master) [![Dependencies](https://david-dm.org/pluma/literalify.png?theme=shields.io)](https://david-dm.org/pluma/literalify)
+[![license - MIT](https://img.shields.io/npm/l/literalify.svg)](http://pluma.mit-license.org) [![Dependencies](https://img.shields.io/david/pluma/literalify.svg)](https://david-dm.org/pluma/literalify)
 
 [![NPM status](https://nodei.co/npm/literalify.png?compact=true)](https://npmjs.org/package/literalify)
+
+[![Build Status](https://img.shields.io/travis/pluma/literalify.svg)](https://travis-ci.org/pluma/literalify) [![Coverage Status](https://img.shields.io/coveralls/pluma/literalify.svg)](https://coveralls.io/r/pluma/literalify?branch=master)
 
 # Rationale
 
