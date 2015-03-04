@@ -4,7 +4,7 @@
 
 This library uses [browserify-transform-tools](https://github.com/benbria/browserify-transform-tools), so you can also supply the configuration by adding a `literalify` field to your project's `package.json` file.
 
-[![stability 3 - stable](http://b.repl.ca/v1/stability-3_--_stable-yellowgreen.png)](http://nodejs.org/api/documentation.html#documentation_stability_index) [![license - Unlicense](http://b.repl.ca/v1/license-Unlicense-lightgrey.png)](http://unlicense.org/) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/literalify)
+[![stability 3 - stable](http://b.repl.ca/v1/stability-3_--_stable-yellowgreen.png)](http://nodejs.org/api/documentation.html#documentation_stability_index) [![license - MIT](https://img.shields.io/npm/l/literalify.svg)] [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/literalify)
 
 [![Build Status](https://travis-ci.org/pluma/literalify.png?branch=master)](https://travis-ci.org/pluma/literalify) [![Coverage Status](https://coveralls.io/repos/pluma/literalify/badge.png?branch=master)](https://coveralls.io/r/pluma/literalify?branch=master) [![Dependencies](https://david-dm.org/pluma/literalify.png?theme=shields.io)](https://david-dm.org/pluma/literalify)
 
@@ -130,6 +130,6 @@ browserify -t literalify ./app.js > bundle.js
 
 Creates a browserify transform that will replace the given require calls with the given JavaScript expressions.
 
-# Unlicense
+# License
 
-This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying [UNLICENSE](https://github.com/pluma/literalify/blob/master/UNLICENSE) file.
+The MIT/Expat license. For more information, see http://pluma.mit-license.org/ or the accompanying [LICENSE](https://github.com/pluma/counting/blob/master/LICENSE) file.
