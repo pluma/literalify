@@ -1,3 +1,5 @@
+**NOTE:** This package is no longer being maintained. If you are interested in taking over as maintainer or are interested in the npm package name, get in touch by creating an issue.
+
 # Synopsis
 
 **literalify** is a [browserify](https://github.com/substack/node-browserify) transform for replacing require calls with arbitrary code, e.g. to pretend browser globals are actually CommonJS modules.
